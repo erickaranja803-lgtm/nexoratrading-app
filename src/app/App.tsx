@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import React from 'react';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { cleanupUrl, handleOAuthCallback } from '@/external/deriv-core';
 import ChunkLoader from '@/components/loader/chunk-loader';
 import LocalStorageSyncWrapper from '@/components/localStorage-sync-wrapper';
@@ -113,7 +114,12 @@ function App() {
         handleCallback();
     }, []);
 
-    return <RouterProvider router={router} />;
+    return (
+        <>
+            <RouterProvider router={router} />
+            <SpeedInsights />
+        </>
+    );
 }
 
 export default App;
