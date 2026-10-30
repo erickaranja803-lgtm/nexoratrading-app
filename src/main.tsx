@@ -1,5 +1,6 @@
 import { configure } from 'mobx';
 import ReactDOM from 'react-dom/client';
+import { inject } from '@vercel/analytics';
 import { AuthWrapper } from './app/AuthWrapper';
 // Removed AnalyticsInitializer import - analytics dependency removed
 // See migrate-docs/ANALYTICS_IMPLEMENTATION_GUIDE.md for re-implementation
@@ -27,7 +28,8 @@ applyFaviconFromLogo();
 applyBrandFontFromConfig();
 applyPrimaryColorFromConfig();
 
-// Removed AnalyticsInitializer() call - analytics dependency removed
+// Initialize Vercel Web Analytics
+inject();
 
 // App Builder preview branding (incl. PREVIEW_READY handshake) is handled by the
 // src/preview/ listener, mounted from app-content only in the preview deployment

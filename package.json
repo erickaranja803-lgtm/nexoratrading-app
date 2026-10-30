@@ -25,6 +25,7 @@
     "@deriv/quill-icons": "2.4.16",
     "@svgr/core": "^8.1.0",
     "@tanstack/react-query": "^5.29.2",
+    "@vercel/analytics": "^2.0.1",
     "blockly": "^10.4.3",
     "canvas-toBlob": "^1.0.0",
     "classnames": "^2.5.1",
